@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="card-title">Editing Topic Quiz</h1>
+        </div>
+        <div class="card-body">
+          <%= render 'form', topic_quiz: @topic_quiz %>
+         <%= link_to 'Show', @topic_quiz %> |
+          <%= link_to 'Back',topic_quizzes_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

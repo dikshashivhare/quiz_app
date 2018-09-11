@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <p id="notice"><%= notice %></p>
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"><%= @topic_quiz.name %></h4>
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>Description:</strong>
+            <%= @topic_quiz.description %>
+          </p>
+          <p>
+            <strong>Rules:</strong>
+            <%= @topic_quiz.rules %>
+          </p>
+          <%= form_for :user_response, url: :create_quiz_submission_topic_quiz, method: :post do |f| %>
+            <% if user_signed_in? %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+            <% end %>
+            <% @topic_quiz.multiple_choices.each do |multiple_choice| %>
+              <p class="" style="font-weight:bold;">Q. <%= multiple_choice.question %></p>
+              <div class="form-group">
+                <% multiple_choice.mcq_options.each do |mcq_option| %>
+                  <%= f.radio_button multiple_choice.question, mcq_option.option %>
+                  <%= f.label mcq_option.option %><br>
+                <% end %>
+              </div>
+            <% end %>
+            <%= f.submit "Submit Paper", class: "btn btn-success" %>
+          <% end %>
+          <div class="mt-4 mb-2">
+            <%= link_to 'Back', topic_quiz_path(@topic_quiz), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

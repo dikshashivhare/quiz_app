@@ -1,0 +1,19 @@
+default: &default
+ adapter:  postgresql
+ host:     localhost
+ encoding: unicode
+ pool:     5
+ username: postgres
+ password: 123456
+
+development:
+ <<: *default
+ database: ec_dev1
+
+test:
+ <<: *default
+ database: ec_test1
+
+production:
+ <<: *default
+ database: ec_dev1

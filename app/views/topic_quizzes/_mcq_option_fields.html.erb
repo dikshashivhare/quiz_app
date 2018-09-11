@@ -1,0 +1,22 @@
+<div class="nested-fields">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <%= f.text_field :option, class: "form-control", placeholder: "Write option value here" %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= f.check_box :is_correct, style: "width:25px;height:25px;" %>
+        <%= f.label :is_correct %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= link_to_remove_association "X", f, class: "btn btn-danger btn-block" %>
+      </div>
+    </div>
+  </div>
+
+  
+</div>

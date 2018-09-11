@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="card-title">Editing Topic Quiz</h1>
+        </div>
+        <div class="card-body">
+
+          <%= render 'form', topic_quiz: @topic_quiz %>
+          <div style="float: right">
+            <%= link_to 'Show', admin_topic_quizzes_path(@topic_quiz),class: "btn btn-primary"%>
+            <%= link_to 'Back', admin_topic_quizzes_path ,class: "btn btn-primary"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

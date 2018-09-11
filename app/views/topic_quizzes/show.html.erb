@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <p id="notice"><%= notice %></p>
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"><%= @topic_quiz.name %></h4>
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>Description:</strong>
+            <%= @topic_quiz.description %>
+          </p>
+          <p>
+            <strong>Rules:</strong>
+            <%= @topic_quiz.rules %>
+          </p>
+          <%= link_to 'Edit', edit_topic_quiz_path(@topic_quiz), class: "btn btn-secondary" %> |
+          <%= link_to 'Back', topic_quizzes_path, class: "btn btn-primary" %> |
+          <%= link_to "Preview Quiz", preview_quiz_topic_quiz_path(@topic_quiz), class: "btn btn-info" %> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

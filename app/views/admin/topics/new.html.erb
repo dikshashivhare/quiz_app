@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card mt-4">
+        <div class="card-header">
+          <h1 class="card-title text-center">New topic</h1>
+        </div>
+        <div class="card-body">
+
+        <%= render 'form', topic: @topic %>
+        <%= link_to 'Back', admin_topics_path %>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>

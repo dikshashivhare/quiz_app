@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @topic_quiz.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @topic_quiz.description %>
+</p>
+
+<p>
+  <strong>Rules:</strong>
+  <%= @topic_quiz.rules %>
+</p>
+
+<% @topic_quiz.multiple_choices.each do |multiple_choice|%>
+  <strong>Question:</strong>
+  <p>
+    <%= multiple_choice.question %>
+  </p>
+  <% multiple_choice.mcq_options.each do |mcq_option|%>
+    <strong>Option:</strong>
+    <p>
+      <%= mcq_option.option %>
+    </p>
+    <p>
+      <strong>Is_correct:</strong>
+      <%= mcq_option.is_correct%>
+    </p>
+  <% end %>
+<% end %>
+<%= link_to 'Edit', edit_admin_topic_quiz_path(@topic_quiz) %> |
+<%= link_to 'Back', admin_topic_quizzes_path %>

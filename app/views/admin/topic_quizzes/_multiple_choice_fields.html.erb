@@ -1,0 +1,16 @@
+<div class="nested-fields">
+  <div class="jumbotron">
+    <div class="form-group">
+      <%= f.text_field :question, class: "form-control", placeholder: "Write a Question here" %>
+    </div>
+    <div id="mcq_options mb-2">
+      <%= f.fields_for :mcq_options do |mcq_option| %>
+        <%= render 'mcq_option_fields', f: mcq_option %>
+      <% end %>
+      <div class="links mb-2">
+        <%= link_to_add_association 'Add Options', f, :mcq_options, class: "btn btn-success" %>
+      </div>
+    </div>
+    <%= link_to_remove_association "Remove", f, class: "btn btn-danger" %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="topic-headings">Topic Name:</h5>
+      <p class="card-text job-values"><%= @topic.name %></p>
+
+
+      <%= link_to 'Edit', edit_admin_topic_path(@topic),class: "btn btn-primary" %> 
+      <%= link_to 'Back', admin_topics_path,class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
+
+
+
